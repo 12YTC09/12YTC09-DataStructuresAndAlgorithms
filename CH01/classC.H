@@ -1,4 +1,6 @@
 
+#ifndef CLASS_C_H
+#define CLASS_C_H 
 
 //#include <stdio>
 //#include <string> 
@@ -9,7 +11,7 @@
 using namespace std;
 
 
-class C{
+ class C{
 
 public:
     C(const char *s = "",int i = 0,double d =1){
@@ -35,4 +37,4 @@ protected:
 };
 
 
-
+#endif
