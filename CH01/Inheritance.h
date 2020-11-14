@@ -61,33 +61,4 @@ class DerivedLevel2 : public Derived1Level1 , public Derived2Level1{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
