@@ -58,6 +58,5 @@ class Class3{
 
 
 
-#endif
 
 

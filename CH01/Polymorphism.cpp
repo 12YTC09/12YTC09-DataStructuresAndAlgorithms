@@ -3,7 +3,7 @@
 //#include <iostream>
 
 
-
+#include "Polymorphism.h"
 
 int main(){
 
@@ -13,20 +13,19 @@ int main(){
 
 
       p = &object1;
+      p -> f();
+      p -> g();
 
+      p = ( Class1*) &object2;
+      p -> f();
+      p -> g();
 
+      p = (Class1*) &object3;
 
-
-
-
-
-
-
-
-
-
-
-
+      p -> f();  //possibly abnormal program termination
+      p -> g();
+      //p -> h();   //h() is not a member of Class1
+      return 0;
 }
 
 
