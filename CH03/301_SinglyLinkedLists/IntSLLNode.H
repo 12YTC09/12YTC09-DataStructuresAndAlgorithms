@@ -14,8 +14,11 @@ class IntSLLNode {
             next = in;
 
         }
-        int info;
-        IntSLLNode *next;
+
+
+        int info;           //store information
+        IntSLLNode *next;   //used to link nodes to form a linked list 
+
 
 }
 

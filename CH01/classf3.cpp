@@ -1,5 +1,8 @@
 
 #include <iostream>
+//#include <functional>
+
+t
 
 
 
@@ -25,7 +28,7 @@ public:
 };
 */
 
-
+/*
 template<class F>
 double sum(F f,int n,int m){
     double result = 0;
@@ -49,4 +52,4 @@ int main()
 
 
 
-
+*/
