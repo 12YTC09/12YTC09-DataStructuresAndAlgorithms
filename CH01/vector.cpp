@@ -49,13 +49,11 @@ int main(){
 
     vector<int> v3(i1,i1+2);   //v3 = (2 3),size =2 ,capacity = 2
     vector<int> v4(v1);        //v4 = (1 2 3 4 5),size = 5,capacity = 5
+    vector<int> v5(5);         //v5 = (0 0 0 0 0)
 
-
-
-
-
-
-
+    v5[1] = v5.at(3) = 9 ;   //v5 = (0 9 0 9 0)
+    cout << v5[1] << ' ' << v5[3] << endl;
+    v3.reserve(6);   //v3 = (2 3),size =2,capacity = 6
 
 
 
