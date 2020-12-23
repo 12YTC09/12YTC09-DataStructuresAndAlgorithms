@@ -24,8 +24,8 @@ void Personal::writeToFile(fstream& out) const {
     out.write(SSN,9);
     out.write(name,nameLen);
     out.write(city,cityLen);
-    out.write(reinterpret_cast<const_char*>(&year),sizeof(int));
-    out.writr(reinterpret_cast<const_char*>(&salary),sizeof(int));
+    out.write(reinterpret_cast<const char*>(&year),sizeof(int));
+    out.write(reinterpret_cast<const char*>(&salary),sizeof(int));
 }
 
 void Personal::readFromFile(fstream& in ){
@@ -70,7 +70,7 @@ istream& Personal::readFromFileConsole(istream& in){
     in >> year;
     cout << "Salary: ";
     in >> salary;
-    in.ingore();
+    in.ignore();
     return in;
 
 }

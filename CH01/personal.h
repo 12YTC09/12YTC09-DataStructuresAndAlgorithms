@@ -9,6 +9,7 @@
 
 #include <fstream>
 #include <cstring>
+#include <iostream>
 
 using namespace std;
 
@@ -17,9 +18,9 @@ using namespace std;
 class Personal {
     public:
         Personal();
-        Personal(const char*, const char* ,int ,long);
+        Personal(const char*,const char*, const char* ,int ,long);
         void writeToFile(fstream&) const;
-        void readFromFile(festream&);
+        void readFromFile(fstream&);
         void readKey();
         int size() const {
             return 9 + nameLen +cityLen + sizeof(year) + sizeof(salary);
@@ -31,7 +32,7 @@ class Personal {
 
     protected:
         const int nameLen,cityLen;
-        const char SSN[10], *name , *city;
+        char SSN[10], *name , *city;
         int year;
         long salary;
         ostream& writeLegibly(ostream&);
@@ -44,3 +45,7 @@ class Personal {
         }
 
 };
+
+
+
+#endif

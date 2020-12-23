@@ -10,9 +10,9 @@ class Student : public Personal {
 
     public:
         Student();
-        Student(const char*,const char* ,int,long char*);
+        Student(const char*,const char* ,const char*,int,long ,const  char*);
         void writeToFile(fstream&) const;
-        void readFromFile(festream&);
+        void readFromFile(fstream&);
         int size() const{
             return Personal::size() + majorLen;
         }
@@ -23,9 +23,10 @@ class Student : public Personal {
         friend ostream& operator<<(ostream& out,Student& sr){
             return sr.writeLegibly(out);
         }
+        istream& readFromConsole(istream&);
         friend istream& operator>>(istream& in,Student& sr){
-            return sr.readFromConsle(in);
-        }
+            return sr.readFromConsole(in);
+        } 
 };
 
 #endif

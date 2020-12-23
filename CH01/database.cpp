@@ -41,17 +41,33 @@ void Database<T>::modify(const T& d){
 }
 
 template<class T>
-bool Database<T>::find(const T &d){
+bool Database<T>::find(const T&d){
+    T tmp;
+    database.open(fName,ios::in|ios::binary);
+    while(!database.eof()){
+        tmp.readFromFile(database);
+        if(tmp == d){
+            database.close();
+            return true;
+        }
+    }
+    database.close();
+    return false;
+}
+
+template<class T>
+ostream& Database<T>::print(ostream& out){
     T tmp;
     database.open(fName,ios::in|ios::binary);
     while(true){
         tmp.readFromFile(database);
         if(database.eof())
             break;
-        out << tmp <<endl;  //overloaded<<
+        out << tmp << endl;  //overloaded <<
     }
     database.close();
     return out;
+
 }
 
 template<class T>

@@ -8,7 +8,7 @@ Student::Student() : majorLen(10){
     major = new char[majorLen+1];
 }
 
-Student::Student(const char *ssn,const char *n,const char *c,int y,int s,const char *m) : majorLen(11){
+Student::Student(const char *ssn,const char *n,const char *c,int y,long s,const char *m) : majorLen(11){
     Personal(ssn,n,c,y,s);
     major = new char[majorLen+1];
     strcpy(major,m);
