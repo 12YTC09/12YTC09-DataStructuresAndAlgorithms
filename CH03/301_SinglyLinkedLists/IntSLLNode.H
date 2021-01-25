@@ -1,4 +1,4 @@
-
+//************************IntSLLNode.h
 
 
 
@@ -6,7 +6,9 @@
 class IntSLLNode {
 
     public:
-        IntSLLNode(){
+
+        //first constructor : initializes the next pointer
+        IntSLLNode(){  
             next = 0;
         }
         IntSLLNode(int i, IntSLLNode *in = 0){
