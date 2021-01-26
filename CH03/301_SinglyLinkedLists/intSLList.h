@@ -7,6 +7,9 @@
 #define INT_LINKED_LIST
 
 
+
+//IntSLLNode for nodes of the list ,and another  
+//
 class InStLLNode {
     InStLLNode(){
         next =0;
@@ -19,6 +22,9 @@ class InStLLNode {
 };
 
 
+
+//IntSLList for access to the list 
+//
 class IntSLList {
     public:
         IntSLList(){
