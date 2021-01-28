@@ -37,11 +37,75 @@ void IntSLList::addToTail(int el){
 }
 
 
-int IntSLList::deleteFromHead(){
+/*
+ *  if(!list.isempty())
+ *      n = list.deleteFromHead();
+ *  else do not delete;
+ *
+ *
+*/
 
+
+/* 
+ * int *IntSLList::deleteFromHead(){
+ *     if (!isempty()){   //if nonempty list;
+ *          int *el = new int(head -> info);
+ *
+ *          return el;
+ *     }
+ *     else return o;
+ *     
+ *
+ *
+ * }
+ *
+*/
+
+
+int IntSLList::deleteFromHead(){
+    
+    /*
+    assert(!isempty()); //terminate the program if false 
+    
+    if(isempty())
+        throw("Empty");
+    
+    try {
+           n = list.deleteFromHead();  // do somhting   with n;
+     }
+     catch(char *s){
+           cerr << "Error:" << s << endl;
+     }
+         
+     */
+
+   
+    int el = head -> info;
+    IntSLLNode *tmp = head;
+    if(head == tail)   //if only one node int he list
+        head = tail = 0;
+    else head = head -> next;
+    delete tmp;
+    return el;
 }
 
+int IntSLList::deleteFromTail(){
+    int el = tail -> info;
+    if (head == tail){  //if only one node in the list;
+        delete head;
+        head = tail = 0;
 
+    }
+    else{       //if more than one node int the list
+        IntSLLNode *tmp;  //find the predecessor of tail
+        for(tmp =head ; tmp -> next != tail;tmp = tmp ->next);
+        delete tail;
+        tail = tmp;  //the predecessor of tail become tail 
+        tail -> next =0;
+
+    }
+    return el;
+}
 
 
 
