@@ -108,6 +108,34 @@ int IntSLList::deleteFromTail(){
 }
 
 
+void IntSLList::deleteNode(int el){
+    if(head !=0){  //if nonempty list;
+        if(head == tail && el == head -> info){  //if only one
+            delete head ;       // node in the list
+            head = tail = 0;    // node int hr list;
+
+        }
+        else if (el == head ->info){  //if more than one node int the list
+            IntSLLNode *tmp = head;
+            head = head -> next;
+            delete tmp;  // an old head is deleteted
+
+        }
+        else {                       //if more than one node int the list
+             IntSLLNode *pred,*tmp;
+             for(pred = head ,tmp = head -> next;  //and nonhead node
+                 tmp !=0 && !(tmp -> info ==el); // is deleted 
+                 pred = pred -> next ,tmp = tmp -> next );
+             if (tmp != 0){
+                 pred -> next = tmp -> next;
+                 if(tmp == tail)
+                     tail = pred;
+                 delete tmp;
+             }
+
+        }
+    }
+}
 
 
 
